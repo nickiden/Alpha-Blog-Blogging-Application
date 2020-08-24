@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+# set root page to home
+  root 'pages#home'
+  
+# set get section to alternate pages
+  get 'about', to: 'pages#about'
 end
