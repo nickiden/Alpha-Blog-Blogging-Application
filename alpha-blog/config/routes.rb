@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   
   
 # resource list for models
-  resources :articles, only: [:show, :index]
+  resources :articles, only: [:show, :index, :new, :create]
 end
