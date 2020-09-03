@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
      
   def show
-      @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end 
   
   def index
@@ -12,6 +12,10 @@ class ArticlesController < ApplicationController
     #instatiate article before creating it with form
     @article = Article.new
   end 
+  
+  def edit
+    @article = Article.find(params[:id])
+  end
   
   def create
     #create new instance and allow form info to save
@@ -25,5 +29,16 @@ class ArticlesController < ApplicationController
      render 'new'
    end
   end 
+  
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description))
+      flash[:notice] = "Article was updated sucessfully!!"
+      redirect_to @article
+      
+    else
+      render 'edit'
+    end
+  end
 
 end
