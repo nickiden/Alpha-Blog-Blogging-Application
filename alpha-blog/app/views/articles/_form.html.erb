@@ -1,29 +1,46 @@
-<!-- section for error message checking -->
-<% if @article.errors.any? %>
-  <h2>The following errors occured!</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %> </li>
-    <% end %>
-  </ul>
-
-
-<% end %>
-
-<%= form_with(model: @article, local: true ) do |f| %>
-
-<p>
-    <%= f.label :title %></br>
-    <%= f.text_field :title %>
-</p>
-
-<p>
-    <%= f.label :description %></br>
-    <%= f.text_area :description %>
-</p>
-
-<p>
-    <%= f.submit %>
-</p>
-
-<% end %> 
+<!--
+File:         _form.html.erb
+Project:      Alpha - Blog (Groovebone)
+Programmer:   Nick Iden
+Date:         Sept 4th, 2020
+Comments: 
+          This is the partal of the form used for creating and editing a blog/article
+-->
+<div class="container">
+  <!-- section for error message checking -->
+  <% if @article.errors.any? %>
+    <h2>The following errors occured!</h2>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <!-- form fields generated -->
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article, class: "shadow-sm p-3 mb-3 bg-white rounded", local: true ) do |f| %>
+        <div class="form-group row">
+            <%= f.label :title, class: "col-2 col-form-label" %>
+            <div class="col-10">
+              <%= f.text_field :title, class: "form-control", placeholder: "Title of article" %> 
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <%= f.label :description, class: "col-2 col-form-label" %>
+          <div class="col-10">
+            <%= f.text_area :description, rows: 10, class: "form-control",placeholder: "Description of article" %>
+          </div>
+        </div>
+        
+        <div class="form-group row justify-content-center">
+            <%= f.submit class: "btn btn-outline-success btn-lg"%>
+        </div>
+      <% end %> 
+    </div>
+    
+    <%= link_to '[ Cancel and return to article listing ]', articles_path, class: "text-info" %>
+   </div>
+</div>
