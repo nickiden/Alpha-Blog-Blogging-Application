@@ -8,10 +8,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-   <%= render 'layouts/messages'%>
-    
-    <%= yield %>
-  </body>
+<body class="d-flex flex-column">
+     
+     <%= render 'layouts/navigaton' %>
+     <%= render 'layouts/messages' %>		   
+     <%= yield %>		    
+  </body>		  
 </html>
