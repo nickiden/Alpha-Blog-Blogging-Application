@@ -6,17 +6,13 @@ Date:         Sept 4th, 2020
 Comments: 
           This is the partal of the form used for creating and editing a blog/article
 -->
+
+ 
+
 <div class="container">
-  <!-- section for error message checking -->
-  <% if @article.errors.any? %>
-    <h2>The following errors occured!</h2>
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %> </li>
-      <% end %>
-    </ul>
-  <% end %>
   
+  <%= render 'shared/errors' %>
+
   <!-- form fields generated -->
   <div class="row justify-content-center">
     <div class="col-10">
@@ -40,7 +36,8 @@ Comments:
         </div>
       <% end %> 
     </div>
-    
-    <%= link_to '[ Cancel and return to article listing ]', articles_path, class: "text-info" %>
+    <div class="md-3">
+      <%= link_to '[ Cancel and return to article listing ]', articles_path, class: "text-info" %>
+    </div>
    </div>
 </div>
