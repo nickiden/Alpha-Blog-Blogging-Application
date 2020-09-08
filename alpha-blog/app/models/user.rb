@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    #one-to-many assocuation
+    has_many :articles
     
     # set validation for user signin
     validates :username, presence: true, 
