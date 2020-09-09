@@ -9,7 +9,17 @@ Comments:
 -->
 
 <h1 class="text-center mt-4">Blog Listing</h1>
+
+<div class="apple_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
+
+
 <!-- the container that gives function and form to the article cards -->
 <%= render 'article' %>
+
+<div class="apple_pagination mb-4" >
+    <%= will_paginate @articles, :container => false %>
+  </div>
 
 
