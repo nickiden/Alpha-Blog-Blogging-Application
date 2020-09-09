@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   
 # resource list for users
   resources :users, except: [:new]
+  
+# session creation for log in
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 end
