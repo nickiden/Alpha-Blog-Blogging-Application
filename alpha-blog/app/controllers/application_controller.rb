@@ -22,5 +22,17 @@ class ApplicationController < ActionController::Base
       !!current_user
     end 
     
+    # method: require_user
+    # Description: 
+    #              Checks if user trying to access area is logged in. If not, 
+    #              then a message will appear and a re direct is used to log in page.
+    #
+    
+    def require_user
+        if !logged_in?
+            flash[:alert] = "You must be logged in to perform that action"
+            redirect_to login_path 
+        end 
+    end 
     
 end
