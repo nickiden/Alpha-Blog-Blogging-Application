@@ -3,7 +3,8 @@ class User < ApplicationRecord
     before_save {self.email = email.downcase }
     
     #one-to-many assocuation
-    has_many :articles
+    has_many :articles, dependent: :destroy
+    
     
     # set validation for user signin
     validates :username, presence: true, 
