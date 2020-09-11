@@ -1,0 +1,37 @@
+
+<!--
+File:         new.html.erb
+Project:      Alpha - Blog (Groovebone)
+Programmer:   Nick Iden
+Date:         Sept 11th, 2020
+Comments: 
+          This is the view for category form. .
+-->
+
+ <h1 class="text-center mt-4">Create a new category</h1>
+
+<div class="container">
+  
+  <%= render 'shared/errors', obj: @category %>
+
+  <!-- form fields generated -->
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @category, class: "shadow-sm p-3 mb-3 bg-white rounded", local: true ) do |f| %>
+        <div class="form-group row">
+            <%= f.label :name, "Category Name", class: "col-2 col-form-label" %>
+            <div class="col-10">
+              <%= f.text_field :name, class: "form-control", placeholder: "Enter a name" %> 
+            </div>
+        </div>
+       
+        <div class="form-group row justify-content-center">
+            <%= f.submit class: "btn btn-outline-success btn-lg" %>
+        </div>
+      <% end %> 
+    </div>
+    <div class="md-3">
+      <%= link_to '[ Cancel and return to article listing ]', articles_path, class: "text-info" %>
+    </div>
+   </div>
+</div>
