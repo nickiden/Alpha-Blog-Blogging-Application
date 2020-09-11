@@ -14,7 +14,7 @@ Comments:
        </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav mr-auto">
+         <ul class="navbar-nav ml-auto">
           
            <li class="nav-item">
               <%= link_to "Bloggers", users_path, class: "nav-link" %>
@@ -36,9 +36,9 @@ Comments:
            </li>
            <!-- set up for login/out button and dropdown for user -->
            <% if logged_in? %>
-             <li class="nav-item dropdown">
+             <li class="nav-item dropdown nav-right">
                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   <%= "(Admin)" if current_user.admin? %> Profile [<%= current_user.username %> ]
+                   <%= "(Admin)" if current_user.admin? %> <%= current_user.username %> 
                  </a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <%= link_to "View your profile", user_path(current_user), class: "dropdown-item" %>
@@ -47,24 +47,21 @@ Comments:
                  </div>
               </li>
                <li class="nav-item">
-                 <%= link_to 'logout', logout_path, class: "nav-link", method: :delete %>
+                 <%= link_to 'logout', logout_path, class: "btn btn-outline-success my-2 my-sm-0", method: :delete %>
                </li>
                
            
            <% else %>
-               <li class="nav-item">
-                 <!-- may change to search button eventually -->
-                 <%= link_to 'log in', login_path, class: "nav-link"%>
-               </li>
-               <li class="nav-item">
+               <li class="nav-item my-2 my-sm-0">
                  <%= link_to 'Sign up', signup_path, class: "nav-link"%>
                </li>
+               <li class="nav-item my-2 my-sm-0">
+                 <!-- may change to search button eventually -->
+                 <%= link_to 'log in', login_path, class: "btn btn-outline-success my-2 my-sm-0"%>
+               </li>
+               
            <% end %>
            
          </ul>
-         <form class="form-inline my-2 my-lg-0">
-           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-         </form>
        </div>
      </nav>
