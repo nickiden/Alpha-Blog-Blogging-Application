@@ -1,0 +1,39 @@
+<!--
+File:         Index.html.erb
+Project:      Alpha - Blog (Groovebone)
+Programmer:   Nick Iden
+Date:         Sept 16th, 2020
+Comments: 
+          This is the index listing page for the categories based on udemy ruby on rails course.
+          Eventually this page will list blogs posted for Groovebone.
+-->
+
+<h1 class="text-center mt-4">Categories</h1>
+
+<!-- pagination code -->
+<div class="apple_pagination">
+    <%= will_paginate @categories, :container => false %>
+  </div>
+
+<div class-"container">
+    <% @categories.each do  |category| %>
+    <div class="row justify-content-md-center">
+        <div class="col-4 mt-4">
+            <div class="card text-center shadow-sm mb-5 bg-white rounded">
+                
+                <div class="card-body">
+                <h5 class="card-title"><%= link_to category.name, category_path(category), class: "text-success" %></h5>
+                </div> 
+                <div class="card-footer text-muted">
+                <small>Created <%= time_ago_in_words(category.created_at) %> ago, edited <%= time_ago_in_words(category.updated_at) %> ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- pagination for bottom -->
+<div class="apple_pagination mb-4" >
+    <%= will_paginate @categories, :container => false %>
+  </div>
