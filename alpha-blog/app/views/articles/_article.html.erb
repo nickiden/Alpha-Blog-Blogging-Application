@@ -9,6 +9,11 @@
           <%if article.user %>
              by <%= link_to article.user.username, user_path(article.user) %> 
           <% end %>
+
+          <!-- show assciated article categories -->
+            <% if article.categories.any? %>
+             <div class= "mt-2"> <%= render article.categories %> </div>
+            <% end %>
           
         </div>
         <div class="card-body">

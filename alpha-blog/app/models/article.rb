@@ -2,6 +2,10 @@ class Article < ApplicationRecord
     
     #belong to relation
     belongs_to :user
+
+    #has many relations
+    has_many :article_categories
+    has_many :categories, through: :article_categories
     
     #create validation for entries
     validates :title, presence: true, length: {minimum: 6, maximum: 100}
