@@ -6,6 +6,8 @@ This is based of the learning ruby on rails course from udemy. It is a simple bl
 
 I choose to post this application to demonstrate I have a basic understanding of the Ruby on Rails and MVC frameworks. I also wanted to demonstrate the use of creating databases in Ruby on Rails. 
 
+TRD development was used to create views and controllers in this assignemnt. Functional and Integration tests are in the program to make sure the functionallity works.
+
 ## Key Features
 
 -Added Administration features so the Admin can delete or change any category, user, or blog post
@@ -15,3 +17,4 @@ I choose to post this application to demonstrate I have a basic understanding of
 
 
 _____________
+
