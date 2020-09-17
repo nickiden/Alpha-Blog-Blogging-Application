@@ -1,3 +1,11 @@
+# Program:  Alpha-Blog
+# File:     users_controller.rb
+# Name:     Nick Iden
+# Date:     Sept 6th, 2020
+# Comment:
+#           This is the users controller for methods used in all the users view
+
+
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
     before_action :require_user, only: [:edit, :update]
