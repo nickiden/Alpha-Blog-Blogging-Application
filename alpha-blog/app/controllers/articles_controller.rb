@@ -1,3 +1,10 @@
+# Program:  Alpha-Blog
+# File:     articles_controller.rb
+# Name:     Nick Iden
+# Date:     Sept 6th, 2020
+# Comment:
+#           This is the articles controller for methods used in articles view
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:show, :index]
