@@ -16,5 +16,5 @@ TRD development was used to create views and controllers in this assignemnt. Fun
 -Restrictions implemented in the controller so views can't access pages they don't have permission to 
 
 
-_____________
+***** See the Wiki for Screen Shots ******
 
