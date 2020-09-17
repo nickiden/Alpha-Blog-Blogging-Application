@@ -1,3 +1,11 @@
+# Program:  Alpha-Blog
+# File:     categories_controller.rb
+# Name:     Nick Iden
+# Date:     Sept 16th, 2020
+# Comment:
+#           This is the acategories controller for methods used in category view
+
+
 class CategoriesController < ApplicationController
     before_action :require_admin, except: [:index, :show]
     
